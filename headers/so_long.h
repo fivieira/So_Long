@@ -45,5 +45,8 @@ typedef struct so_long
 int	exit_point(t_so_long *so_long);
 int	map_reading(t_so_long *so_long, char *argv[]);
 void check_errors(t_so_long *so_long);
+void place_images_in_game(t_so_long *so_long);
+void adding_in_graphics(t_so_long *so_long);
+int	controls_working(int command, t_so_long *game);
 
 #endif
