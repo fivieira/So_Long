@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:34:41 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 17:20:25 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:48:09 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ static void	count_checker(t_so_long *game, int height, int width)
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')
-			game->column_count++;
+			game->collectible_count++;
 	if (game->map[height][width] == 'P')
-			game->player++;
+			game->player_count++;
 	if (game->map[height][width] == 'E')
 			game->exit_count++;
 }
@@ -93,7 +93,7 @@ void	check_caracters(t_so_long *game)
 		}
 		height++;
 	}
-	if (!(game->player_count == 1 && game->column_count > 1 && game->exit_count == 1))
+	if (!(game->player_count == 1 && game->collectible_count > 1 && game->exit_count == 1))
 	{
 		printf("Error\nThis map is missing the player, the exit or the collectibles\n");
 		exit_point(game);

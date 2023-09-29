@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:44:55 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 17:09:44 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:55:24 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*function_name(int fd, char *buf, char *backup)
 		backup = ft_strjoin(char_temp, buf);
 		free(char_temp);
 		char_temp = NULL;
-		if (ft_strchr (buf, '\n'))
+		if (ft_strchr(buf, '\n'))
 			break ;
 	}
 	return (backup);

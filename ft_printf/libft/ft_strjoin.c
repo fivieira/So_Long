@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 14:36:25 by fivieira          #+#    #+#             */
-/*   Updated: 2023/04/22 15:51:25 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:55:36 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
 	{
@@ -30,10 +30,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	while (s2[j] != '\0')
 	{
-		str[i] = s2[j++];
-		i++;
+		str[i + j] = s2[j];
+		j++;
 	}
-	str[i] = '\0';
+	str[i + j] = '\0';
 	return (str);
 }
 

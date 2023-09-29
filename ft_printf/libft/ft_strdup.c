@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:01:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/05/18 11:27:49 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:56:01 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 char	*ft_strdup(const char *s)
 {
-	char	*new;
 	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!new)
+	j = ft_strlen(s);
+	str = (char *)malloc(sizeof(*str) * (j + 1));
+	while (i < j)
 	{
-		free(new);
-		return (NULL);
-	}
-	while (s[i] != '\0')
-	{
-		new[i] = s[i];
+		str[i] = s[i];
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	str[i] = '\0';
+	return (str);
 }
 
 // int	main(void)
