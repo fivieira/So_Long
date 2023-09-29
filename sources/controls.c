@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/28 18:23:02 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:50:01 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	right_move(t_complete *game, int i, int j)
+static int	right_move(t_so_long *game, int i, int j)
 {
 	if (game->map[j][i] == 'E')
 	{
-		if (game->collectables != 0)
+		if (game->collectible_count != 0)
 			return (0);
 		printf("\nYou Have Won, Congrats!\n");
 		exit_point(game);
@@ -33,7 +33,7 @@ static int	right_move(t_complete *game, int i, int j)
 		game->map[j][i] = 'P';
 		game->x_axis = i;
 		game->y_axis = j;
-		game->collectables--;
+		game->collectible_count--;
 		game->counter++;
 	}
 	return (1);
@@ -67,11 +67,11 @@ static int keyboard_W_S(t_so_long *game, int movement)
 		game->map[j - 1][i] = '0';
 	}
 	printf("Movements: %d\n", game->counter);
-	printf("Collectables: %d\n", game->collectables);
+	printf("Collectables: %d\n", game->collectible_count);
 	return (1);
 }
 
-static int	keyboard_a_d(t_complete *game, int movement)
+static int	keyboard_a_d(t_so_long *game, int movement)
 {
 	int	i;
 	int	j;
@@ -100,7 +100,7 @@ static int	keyboard_a_d(t_complete *game, int movement)
 		game->map[j][i - 1] = '0';
 	}
 	printf("Steps Taken: %i\n", game->counter);
-	printf("Collectables: %i\n", game->collectables);
+	printf("Collectables: %i\n", game->collectible_count);
 	return (1);
 }
 

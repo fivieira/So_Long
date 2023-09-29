@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/28 18:23:02 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:05:55 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,12 @@ int	exit_point(t_so_long *game)
 		mlx_destroy_window(game->mlxpointer, game->winpointer);
     free(game->mlxpointer);
 	while (line < game->map_height - 1)
-	{
-		free(game->map[line]);
-		line++;
-	}
+		free(game->map[line++]);
 	free(game->map);
 	exit(0);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	t_so_long game;
 	if (argc != 2)
@@ -41,10 +38,10 @@ int	main(int argc, char *argv[])
 	map_reading(&game, argv);
 	check_errors(&game);
 	game.mlxpointer = mlx_init();
-	game.winpointer = mlx_new_window(game.mlxpointer, game.map_width * 32, game.map_height * 32, "so_long");
+	game.winpointer = mlx_new_window(game.mlxpointer, game.map_width * 40, game.map_height * 0, "solong");
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);
-	mlx_hook(game.winpointer, 17, 0, exit_point, 0);
+	mlx_hook(game.winpointer, 17, 0, (void *)exit_point, 0);
 	mlx_loop(game.mlxpointer);
 }

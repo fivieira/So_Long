@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:33:27 by fivieira          #+#    #+#             */
-/*   Updated: 2023/08/16 16:35:14 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/04/22 15:14:56 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *str1, const void *str2, size_t	n)
 	{
 		while (n--)
 		{
-			mem[n] = tocopy[n];
+		mem[n] = tocopy[n];
 		}
 		return (mem);
 	}

@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:19:16 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/28 18:24:46 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:49:21 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ void	adding_in_graphics(t_so_long *game)
 		while (game->map[height][width])
 		{
 			if (game->map[height][width] == '1')
-				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->wall, width * 32, height * 32);
+				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->wall, width * 40, height * 40);
 			if (game->map[height][width] == '0')
-				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->floor, width * 32, height * 32);
+				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->floor, width * 40, height * 40);
 			if (game->map[height][width] == 'C')
 			{
-				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->collectible, width * 32, height * 32);
+				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->collectible, width * 40, height * 40);
 				game->collectible_count++;
 			}
 			if (game->map[height][width] == 'E')
-				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->exit, width * 32, height * 32);
+				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->exit, width * 40, height * 40);
 			if (game->map[height][width] == 'P')
 			{
-				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->player, width * 32, height * 32);
+				mlx_put_image_to_window(game->mlxpointer, game->winpointer, game->player, width * 40, height * 40);
 				game->x_axis = width;
 				game->y_axis = height;
 			}

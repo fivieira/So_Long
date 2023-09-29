@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:12:57 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/28 18:23:40 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:48:58 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define SO_LONH_H
 
 # include <unistd.h>
+#include <fcntl.h>
 # include "get_next_line.h"
 # include "printf.h"
-# include "../libft/libft.h"
+# include "../ft_printf/libft/libft.h"
 # include "../minilibx/mlx.h"
 
 typedef struct so_long
@@ -28,6 +29,7 @@ typedef struct so_long
 	int		column_count;
 	int		exit_count;
 	int		collectible_count;
+	int		counter;
 	int		x_axis;
 	int		y_axis;
 

@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:35:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/28 17:33:58 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:11:19 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int width_of_map(char *string)
 	return (width);
 }
 
-static int add_line(t_so_long	*game, char *line)
+static int add_line(t_so_long *game, char *line)
 {
 	char	**temporary;
 	int		i;
@@ -35,7 +35,7 @@ static int add_line(t_so_long	*game, char *line)
 	game->map_height++;
 	temporary = (char **)malloc(sizeof(char *) * (game->map_height + 1));
 	temporary[game->map_height] = NULL;
-	while (i < game->map[i] - 1)
+	while (i < game->map_height - 1)
 	{
 		temporary[i] = game->map[i];
 		i++;
@@ -47,7 +47,7 @@ static int add_line(t_so_long	*game, char *line)
 	return (1);
 }
 
-int map_reading(t_so_long *game, char *argv[])
+int map_reading(t_so_long *game, char **argv)
 {
 	char	*readmap;
 	
@@ -55,7 +55,7 @@ int map_reading(t_so_long *game, char *argv[])
 	if (game->fd < 0)
 	{
 		printf("Error\nInvalid file\n");
-		exit(0);
+		return (0);
 	}
 	while (1)
 	{

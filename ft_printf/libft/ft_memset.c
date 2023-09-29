@@ -6,23 +6,18 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:16:52 by fivieira          #+#    #+#             */
-/*   Updated: 2023/04/21 16:09:10 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:33:56 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t n)
 {
-	unsigned int	count;
-	unsigned char	*memory;
+	unsigned char	*p;
 
-	count = 0;
-	memory = str;
-	while (count < n)
-	{
-		memory[count] = c;
-		count++;
-	}
-	return (memory);
+	p = (unsigned char *)b;
+	while (n--)
+		*p++ = (unsigned char)c;
+	return (b);
 }
