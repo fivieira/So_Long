@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:23:36 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 17:56:25 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/30 15:12:11 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = 0;
 	return (str);
 }
-
-// int main (void)
-// {
-// 	char str[] = "";
-
-// 	printf("A minha subString: %s\n",ft_substr(str, 0 ,1));
-// }

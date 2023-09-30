@@ -6,12 +6,12 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:12:57 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 15:48:58 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:24:41 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-# define SO_LONH_H
+# define SO_LONG_H
 
 # include <unistd.h>
 #include <fcntl.h>
@@ -45,7 +45,7 @@ typedef struct so_long
 }	t_so_long;
 
 int	exit_point(t_so_long *so_long);
-int	map_reading(t_so_long *so_long, char *argv[]);
+int	map_reading(t_so_long *so_long, char **argv);
 void check_errors(t_so_long *so_long);
 void place_images_in_game(t_so_long *so_long);
 void adding_in_graphics(t_so_long *so_long);

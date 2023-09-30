@@ -6,13 +6,13 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:03:31 by fivieira          #+#    #+#             */
-/*   Updated: 2023/04/28 15:59:55 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/30 14:44:09 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char *set)
 {
 	size_t	str_len;
 	size_t	start;

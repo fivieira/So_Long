@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 17:37:53 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:09:09 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);
-	mlx_hook(game.winpointer, 17, 0, (void *)exit_point, 0);
+	mlx_hook(game.winpointer, 17, 0, exit_point, &game);
 	mlx_loop(game.mlxpointer);
+	return (0);
 }

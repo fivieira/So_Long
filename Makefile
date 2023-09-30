@@ -6,7 +6,7 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 15:53:34 by fivieira          #+#    #+#              #
-#    Updated: 2023/09/29 16:13:57 by fivieira         ###   ########.fr        #
+#    Updated: 2023/09/30 17:25:33 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = ${SRC:.c=.o}
 
 OBJS_GETNEXTLINE = ${GETNEXTLINE:.c=.o}
 
-LIBRARY := -Lminilibx -lmlx -Ilmlx -lXext -lX11 -lm
+LIBRARY := -L minilibx -lmlx -lXext -lX11
 MINILIBX := minilibx/
 
 #INCLUDE = headers/ -I .
@@ -43,7 +43,7 @@ all:	${NAME} $(LIBRARY) $(MINILIBX)
 $(NAME): ${OBJS} ${OBJS_GETNEXTLINE}
 		$(MAKE) $(FT_PRINTF_PATH) 
 		$(MAKE) $(MINILIBX)
-		$(CC) $(CFLAGS) $(SRC) $(GETNEXTLINE) $(LIBRARY) -o $(NAME) $(FT_PRINTF) $(INCLUDE)
+		$(CC) $(CFLAGS) $(SRC) $(GETNEXTLINE) $(LIBRARY) -o $(NAME) $(FT_PRINTF)
 
 clean:
 		${MAKE} ${FT_PRINTF_PATH} clean

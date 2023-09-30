@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/29 15:50:01 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:55:33 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int keyboard_W_S(t_so_long *game, int movement)
 
 	i = game->x_axis;
 	j = game->y_axis;
-	if (movement == 13)
+	if (movement == 'w')
 	{
 		j--;
 		if (game->map[j][i] == '1')
@@ -56,7 +56,7 @@ static int keyboard_W_S(t_so_long *game, int movement)
 		if (!k)
 			return (0);
 		game->map[j + 1][i] = '0';	
-	}else if (movement == 1)
+	}else if (movement == 's')
 	{
 		j++;
 		if (game->map[j][i] == '1')
@@ -79,7 +79,7 @@ static int	keyboard_a_d(t_so_long *game, int movement)
 
 	i = game->x_axis;
 	j = game->y_axis;
-	if (movement == 0)
+	if (movement == 'a')
 	{
 		i--;
 		if (game->map[j][i] == '1')
@@ -89,7 +89,7 @@ static int	keyboard_a_d(t_so_long *game, int movement)
 			return (0);
 		game->map[j][i + 1] = '0';
 	}
-	else if (movement == 2)
+	else if (movement == 'd')
 	{
 		i++;
 		if (game->map[j][i] == '1')
@@ -109,13 +109,13 @@ int	controls_working(int command, t_so_long *game)
 	int	works;
 	if (command == 53)
 		exit_point(game);
-	if (command == 13)
+	if (command == 'w')
 		works =	keyboard_W_S(game, command);
-	if (command == 1)
+	if (command == 's')
 		works =	keyboard_W_S(game, command);
-	if (command == 0)
+	if (command == 'a')
 		works =	keyboard_a_d(game, command);
-	if (command == 2)
+	if (command == 'd')
 		works =	keyboard_a_d(game, command);
 	if (works)
 		adding_in_graphics(game);
