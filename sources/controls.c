@@ -107,7 +107,7 @@ static int	keyboard_a_d(t_so_long *game, int movement)
 int	controls_working(int command, t_so_long *game)
 {
 	int	works;
-	if (command == 53)
+	if (command == 65307)
 		exit_point(game);
 	if (command == 'w'|| command == 65362)
 		works =	keyboard_W_S(game, command);
