@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:12:57 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/30 17:24:41 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:45:11 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <unistd.h>
-#include <fcntl.h>
+# include <fcntl.h>
 # include "get_next_line.h"
 # include "printf.h"
 # include "../ft_printf/libft/libft.h"
@@ -44,11 +44,14 @@ typedef struct so_long
 	void	*winpointer;
 }	t_so_long;
 
-int	exit_point(t_so_long *so_long);
-int	map_reading(t_so_long *so_long, char **argv);
-void check_errors(t_so_long *so_long);
-void place_images_in_game(t_so_long *so_long);
-void adding_in_graphics(t_so_long *so_long);
-int	controls_working(int command, t_so_long *game);
+int		exit_point(t_so_long *so_long);
+int		map_reading(t_so_long *so_long, char **argv);
+void	check_errors(t_so_long *so_long);
+void	place_images_in_game(t_so_long *so_long);
+void	adding_in_graphics(t_so_long *so_long);
+int		controls_working(int command, t_so_long *game);
+void	put_images(int height, int width, t_so_long *game);
+void	check_walls(t_so_long *game);
+void	check_caracters(t_so_long *game);
 
 #endif

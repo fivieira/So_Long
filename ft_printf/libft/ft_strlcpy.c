@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 15:40:04 by fivieira          #+#    #+#             */
-/*   Updated: 2023/04/29 15:28:20 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:10:00 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	{
 		while (src[i] != '\0' && (i < (size - 1)))
 		{
-		dest[i] = src[i];
-		i++;
+			dest[i] = src[i];
+			i++;
 		}
 		dest[i] = '\0';
 	}

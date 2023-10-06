@@ -6,13 +6,13 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:35:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/30 15:31:50 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:11:57 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int width_of_map(char *string)
+static int	width_of_map(char *string)
 {
 	int	width;
 
@@ -24,13 +24,13 @@ static int width_of_map(char *string)
 	return (width);
 }
 
-static int add_line(t_so_long *game, char *line)
+static int	add_line(t_so_long *game, char *line)
 {
 	char	**temporary;
 	int		i;
 
 	if (!line)
-		return(0);
+		return (0);
 	i = 0;
 	game->map_height++;
 	temporary = (char **)malloc(sizeof(char *) * (game->map_height + 1));
@@ -47,10 +47,10 @@ static int add_line(t_so_long *game, char *line)
 	return (1);
 }
 
-int map_reading(t_so_long *game, char **argv)
+int	map_reading(t_so_long *game, char **argv)
 {
 	char	*readmap;
-	
+
 	game->fd = open(argv[1], O_RDONLY);
 	if (game->fd < 0)
 	{
@@ -60,9 +60,8 @@ int map_reading(t_so_long *game, char **argv)
 	while (1)
 	{
 		readmap = get_next_line(game->fd);
-		//printf("%s", readmap);
 		if (!add_line(game, readmap))
-			break;
+			break ;
 	}
 	close(game->fd);
 	game->map_width = width_of_map(game->map[0]);

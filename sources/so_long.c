@@ -6,20 +6,26 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/30 17:09:09 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:31:18 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	check_errors(t_so_long *game)
+{
+	check_walls(game);
+	check_caracters(game);
+}
+
 int	exit_point(t_so_long *game)
 {
-	int line;
+	int	line;
 
 	line = 0;
 	if (game->winpointer)
 		mlx_destroy_window(game->mlxpointer, game->winpointer);
-    free(game->mlxpointer);
+	free(game->mlxpointer);
 	while (line < game->map_height - 1)
 		free(game->map[line++]);
 	free(game->map);
@@ -28,7 +34,8 @@ int	exit_point(t_so_long *game)
 
 int	main(int argc, char **argv)
 {
-	t_so_long game;
+	t_so_long	game;
+
 	if (argc != 2)
 	{
 		printf("Error\nInvalid number of arguments\n");
@@ -38,7 +45,8 @@ int	main(int argc, char **argv)
 	map_reading(&game, argv);
 	check_errors(&game);
 	game.mlxpointer = mlx_init();
-	game.winpointer = mlx_new_window(game.mlxpointer, game.map_width * 40, game.map_height * 40, "solong");
+	game.winpointer = mlx_new_window(game.mlxpointer, 
+			game.map_width * 40, game.map_height * 40, "solong");
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);

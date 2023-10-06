@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/09/30 18:35:57 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:31:51 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	right_move(t_so_long *game, int i, int j)
 	return (1);
 }
 
-static int keyboard_W_S(t_so_long *game, int movement)
+static int	keyboard_w_s(t_so_long *game, int movement)
 {
 	int	i;
 	int	j;
@@ -55,8 +55,9 @@ static int keyboard_W_S(t_so_long *game, int movement)
 		k = right_move(game, i, j);
 		if (!k)
 			return (0);
-		game->map[j + 1][i] = '0';	
-	}else if (movement == 's' || movement == 65364)
+		game->map[j + 1][i] = '0';
+	}
+	else if (movement == 's' || movement == 65364)
 	{
 		j++;
 		if (game->map[j][i] == '1')
@@ -89,7 +90,7 @@ static int	keyboard_a_d(t_so_long *game, int movement)
 			return (0);
 		game->map[j][i + 1] = '0';
 	}
-	else if (movement == 'd'|| movement == 65363)
+	else if (movement == 'd' || movement == 65363)
 	{
 		i++;
 		if (game->map[j][i] == '1')
@@ -107,12 +108,13 @@ static int	keyboard_a_d(t_so_long *game, int movement)
 int	controls_working(int command, t_so_long *game)
 {
 	int	works;
+
 	if (command == 65307)
 		exit_point(game);
-	if (command == 'w'|| command == 65362)
-		works =	keyboard_W_S(game, command);
+	if (command == 'w' || command == 65362)
+		works =	keyboard_w_s(game, command);
 	if (command == 's' || command == 65364)
-		works =	keyboard_W_S(game, command);
+		works =	keyboard_w_s(game, command);
 	if (command == 'a' || command == 65361)
 		works =	keyboard_a_d(game, command);
 	if (command == 'd' || command == 65363)
