@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:35:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/06 17:11:57 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/07 16:36:42 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	map_reading(t_so_long *game, char **argv)
 	game->fd = open(argv[1], O_RDONLY);
 	if (game->fd < 0)
 	{
-		printf("Error\nInvalid file\n");
+		ft_printf("Error\nInvalid file\n");
 		return (0);
 	}
 	while (1)

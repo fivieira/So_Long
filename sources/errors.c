@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:34:41 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/06 17:27:50 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:28:38 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	horizontal_wall(t_so_long *game)
 	j = 0;
 	while (j < i)
 	{
-		if (game->map[0][i] == '1' && game->map[game->map_height - 1][j] == '1')
+		if (game->map[0][j] != '1' || game->map[game->map_height - 1][j] != '1')
 			return (0);
 		j++;
 	}
@@ -37,8 +37,7 @@ static int	vertical_wall(t_so_long *game)
 	width = game->map_width;
 	while (height < game->map_height)
 	{
-		if (!(game->map[height][0] == '1' 
-			&& game->map[height][width - 1] == '1'))
+		if (game->map[height][0] != '1' || game->map[height][width - 1] != '1')
 			return (0);
 		height++;
 	}
@@ -54,7 +53,7 @@ void	check_walls(t_so_long *game)
 	horizontal_walls = horizontal_wall(game);
 	if (!vertical_walls || !horizontal_walls)
 	{
-		printf("Error\nThis map is missing the walls\n");
+		ft_printf("Error\nThis map is missing the walls\n");
 		exit_point(game);
 	}
 }
@@ -68,7 +67,7 @@ static void	count_checker(t_so_long *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		printf("\nError Here!%c\n", game->map[height][width]);
+		ft_printf("\nError Here!%c\n", game->map[height][width]);
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')
@@ -98,8 +97,8 @@ void	check_caracters(t_so_long *game)
 	if (!(game->player_count == 1 && game->collectible_count >= 1 
 			&& game->exit_count == 1))
 	{
-		printf("Error\n");
-		printf("This map is missing the player, the exit or the collectibles\n");
+		ft_printf("Error\n");
+		ft_printf("This map is invalid (player or exixt or Collectible)\n");
 		exit_point(game);
 	}
 }
