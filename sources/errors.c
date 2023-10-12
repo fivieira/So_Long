@@ -56,6 +56,8 @@ void	check_walls(t_so_long *game)
 		ft_printf("Error\nThis map is missing the walls\n");
 		exit_point(game);
 	}
+	if (!check_format(game))
+		ft_printf("Map is not a rectangle.");
 }
 
 static void	count_checker(t_so_long *game, int height, int width)
@@ -101,4 +103,21 @@ void	check_caracters(t_so_long *game)
 		ft_printf("This map is invalid (player or exixt or Collectible)\n");
 		exit_point(game);
 	}
+}
+
+int	check_format(t_so_long *game)
+{
+	int i;
+	int row_len;
+
+	i = 0;
+	row_len = ft_strlen(game->map[0]);
+	while (i < game->map_width)
+	{
+		if (ft_strlen(game->map[i]) != row_len)
+			return (0);
+		i++;
+	}
+	game->map_height = row_len;
+	return (1);
 }
