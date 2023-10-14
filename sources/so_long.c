@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:14:24 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/07 17:36:45 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 18:30:33 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ int	exit_point(t_so_long *game)
 
 	line = 0;
 	if (game->winpointer)
+	{
 		mlx_destroy_window(game->mlxpointer, game->winpointer);
-	free(game->mlxpointer);
-	while (line < game->map_height - 1)
+		mlx_destroy_image(game->mlxpointer, game->player);
+		mlx_destroy_image(game->mlxpointer, game->floor);
+		mlx_destroy_image(game->mlxpointer, game->wall);
+		mlx_destroy_image(game->mlxpointer, game->exit);
+		mlx_destroy_image(game->mlxpointer, game->collectible);
+		mlx_destroy_display(game->mlxpointer);
+		free(game->mlxpointer);
+	}
+	while (line < game->map_height)
 		free(game->map[line++]);
 	free(game->map);
 	exit(0);

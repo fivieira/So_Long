@@ -6,13 +6,13 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 15:53:34 by fivieira          #+#    #+#              #
-#    Updated: 2023/10/14 16:46:38 by fivieira         ###   ########.fr        #
+#    Updated: 2023/10/14 17:59:38 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = sources/so_long.c sources/map.c sources/graphics.c sources/errors.c sources/controls.c
+SRC = sources/so_long.c sources/map.c sources/graphics.c sources/errors.c sources/controls.c sources/check_format.c
 
 GETNEXTLINE:= get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 

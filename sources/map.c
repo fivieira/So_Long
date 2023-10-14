@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:35:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/14 16:59:47 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 17:52:13 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	map_reading(t_so_long *game, char **argv)
 	while (1)
 	{
 		readmap = get_next_line(game->fd);
-		//ft_printf("%s\n",readmap);
 		if (!add_line(game, readmap))
 			break ;
 	}
