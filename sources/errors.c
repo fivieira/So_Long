@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:34:41 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/07 17:28:38 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:07:10 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,12 @@ void	check_walls(t_so_long *game)
 		ft_printf("Error\nThis map is missing the walls\n");
 		exit_point(game);
 	}
-	if (!check_format(game))
+	if (check_format(game) == 0)
+	{
 		ft_printf("Map is not a rectangle.");
+		exit_point(game);	
+	}
+
 }
 
 static void	count_checker(t_so_long *game, int height, int width)
@@ -107,17 +111,17 @@ void	check_caracters(t_so_long *game)
 
 int	check_format(t_so_long *game)
 {
-	int i;
-	int row_len;
+	size_t	i;
+	size_t	width;
 
 	i = 0;
-	row_len = ft_strlen(game->map[0]);
-	while (i < game->map_width)
+	width = game->map_width;
+	while (game->map[i] != NULL)
 	{
-		if (ft_strlen(game->map[i]) != row_len)
-			return (0);
+		ft_printf("W: %d, widht: %d\n",ft_strlen(game->map[i]),(width + 1));
+		if (ft_strlen(game->map[i]) != (width + 1))
+			return (0);	
 		i++;
 	}
-	game->map_height = row_len;
 	return (1);
 }

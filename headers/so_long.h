@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:12:57 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/07 17:36:15 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 15:51:23 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		controls_working(int command, t_so_long *game);
 void	put_images(int height, int width, t_so_long *game);
 void	check_walls(t_so_long *game);
 void	check_caracters(t_so_long *game);
+int		check_format(t_so_long *game);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 15:53:34 by fivieira          #+#    #+#              #
-#    Updated: 2023/10/07 17:37:21 by fivieira         ###   ########.fr        #
+#    Updated: 2023/10/14 15:50:59 by fivieira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 
 SRC = sources/so_long.c sources/map.c sources/graphics.c sources/errors.c sources/controls.c
 
-GETNEXTLINE:= get_next_line/get_next_line.c
+GETNEXTLINE:= get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
 OBJS = ${SRC:.c=.o}
 
