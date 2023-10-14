@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:34:41 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/14 16:07:10 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 17:23:29 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	check_format(t_so_long *game)
 	width = game->map_width;
 	while (game->map[i] != NULL)
 	{
-		ft_printf("W: %d, widht: %d\n",ft_strlen(game->map[i]),(width + 1));
+		printf("W: %ld, widht: %ld\n",ft_strlen(game->map[i]),(width + 1));
 		if (ft_strlen(game->map[i]) != (width + 1))
 			return (0);	
 		i++;

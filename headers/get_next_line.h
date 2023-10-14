@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:12:05 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/14 15:49:50 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 17:00:34 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "../ft_printf/libft/libft.h"
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 500
 # endif
 
 char	*get_next_line(int fd);

@@ -6,7 +6,7 @@
 /*   By: fivieira <fivieira@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:35:45 by fivieira          #+#    #+#             */
-/*   Updated: 2023/10/14 16:04:28 by fivieira         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:59:47 by fivieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,20 @@ static int	add_line(t_so_long *game, char *line)
 
 	if (!line)
 		return (0);
-	i = 0;
-	game->map_height++;
-	temporary = (char **)malloc(sizeof(char *) * (game->map_height + 1));
-	temporary[game->map_height] = NULL;
-	while (i < game->map_height - 1)
+	i = game->map_height;
+	temporary = (char **)malloc(sizeof(char *) * (i + 2));
+	if (!temporary)
+		return (0);
+	while (i--)
 	{
 		temporary[i] = game->map[i];
-		i++;
 	}
-	temporary[i] = line;
+	temporary[game->map_height + 1] = NULL;
+	temporary[game->map_height] = line;
 	if (game->map)
 		free(game->map);
 	game->map = temporary;
+	game->map_height++;
 	return (1);
 }
 
